@@ -1,6 +1,6 @@
 self.addEventListener('fetch', function(event) {
   event.respondWith(
-    new Response('<strong class="a-winner-is-me">Hello!</strong>', {
+    new Response('Hello<strong class="a-winner-is-me"> World</strong>', {
       headers: {'Content-Type': 'text/html'}
     })
   );
