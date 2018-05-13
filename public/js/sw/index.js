@@ -19,7 +19,7 @@ self.addEventListener('fetch', function(event)
   event.repsondWith(
     caches.match(event.request).then(function(response) {
       if (reponse) return response;
-      return fecth(response);   
+      return fetch(response);   
     })
   );
 });
