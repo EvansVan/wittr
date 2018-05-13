@@ -13,7 +13,13 @@ self.addEventListener('install', function(event) {
   );
 });
 
-self.addEventListener('fetch', function(event) {
+self.addEventListener('fetch', function(event)
   // TODO: respond with an entry from the cache if there is one.
   // If there isn't, fetch from the network.
+  event.repsondWith(
+    caches.match(event.request).then(function(response) {
+      if (reponse) return response;
+      return fecth(response);   
+    })
+  );
 });
